@@ -14,22 +14,49 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      
-      - name: marp-action
-        env: 
-          MARP_ARGS: "-I slides/ --output dist/" # this is the important line change since our marp command is different from the standard one
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-        uses: ralexander-phi/marp-action@0.2
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Ensure build dir exists
+        run: mkdir -p build
+
+      - name: Copy images directory (if exists)
+        run: if [[ -d slides/img ]]; then cp -R slides/img build/dist/img; fi
+
+      - name: Copy index.html
+        run: cp index.html build/index.html
+
+      - name: Check if docs folder exists
+        id: docs-folder-exists
+        run: bash -c "[[ -d slides ]] ; echo \"has_docs=\$?\" >> \"$GITHUB_OUTPUT\""
+
+      - name: Marp Build (docs folder, if exists)
+        if: steps.docs-folder-exists.outputs.has_docs == '0'
+        uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          keep_files: false  # Set to false to ensure a clean deployment by removing old files
+          args: -I slides/ -o build/dist/
+        env:
+          MARP_USER: root:root
+
+      - name: Deploy preview
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./build/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+
+      - name: Deploy production
+        if: ${{ github.event_name == 'push' }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: ./build/
+          clean-exclude: pr-preview/
