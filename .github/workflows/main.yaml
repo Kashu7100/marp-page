@@ -41,7 +41,7 @@ jobs:
         if: steps.docs-folder-exists.outputs.has_docs == '0'
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          args: --theme-set themes/am_template.scss themes/am_dark.scss -I slides/ -o build/dist/ 
+          args: --theme-set themes/am_template.scss themes/am_dark.scss --html -I slides/ -o build/dist/ 
         env:
           MARP_USER: root:root
 
