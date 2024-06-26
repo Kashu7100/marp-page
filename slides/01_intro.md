@@ -60,7 +60,7 @@ kyamazak@andrew.cmu.edu
 - Quizzes (10%)
 - Midterm (30%)
 - Final Project (30%)
- 
+
 
 ## 1. Robot Learning
 
@@ -101,11 +101,14 @@ Mobile Manipulation
 
 ## 1.1 What is Robot Learning?
 
-> **Robot learning** is a research field at the intersection of **machine learning** and **robotics**. It studies techniques allowing a robot to acquire novel skills or adapt to its environment through learning algorithms. 
-
+> **Robot learning** is a research field at the intersection of **machine learning** and **robotics**. It studies techniques allowing a robot to acquire novel skills or adapt to its environment through learning algorithms.
 
 
 
 ## 1.2 Why Robot Learning?
 
 
+## Deep Learning and Neural Networks
+
+
+## Resources:

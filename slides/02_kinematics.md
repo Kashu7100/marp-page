@@ -42,7 +42,7 @@ The following four transformation parameters are known as D–H parameters:
 - $d_i$: distance from $x_{i-1}$ to $x_i$ along $z_i$.
 - $\theta_i$: angle from $x_{i-1}$ to $x_i$ about $z_i$.
 
-![bg right 40%](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Classic_DH_Parameters_Convention.png/568px-Classic_DH_Parameters_Convention.png)
+![bg right 100%](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Classic_DH_Parameters_Convention.png/568px-Classic_DH_Parameters_Convention.png)
 
 
 ## Denavit–Hartenberg convention
