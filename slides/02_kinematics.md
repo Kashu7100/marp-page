@@ -68,7 +68,6 @@ $$
 x(t) = f(\theta(t))
 $$
 
-
 ## Inverse Kinematics
 
 Inverse kinematics (IK) is essentially the reverse operation of FK: computing configuration(s) to reach a desired workspace coordinate. Unlike forward kinematics, inverse kinematics cannot be solved in a closed-form expression (in general). If we can derive a closed-form expression through symbolic manipulations, we can use Analytical IK, otherwise we need to use numerical approach.

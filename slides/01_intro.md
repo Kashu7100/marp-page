@@ -62,7 +62,7 @@ kyamazak@andrew.cmu.edu
 - Final Project (30%)
 
 
-## 1. Robot Learning
+## Robot Learning
 
 <!-- _class: trans -->
 <!-- _footer: "" -->
@@ -108,7 +108,39 @@ Mobile Manipulation
 ## 1.2 Why Robot Learning?
 
 
-## Deep Learning and Neural Networks
+## 1.3 When to make robots learn?
+
+<!-- _class:  bq-red -->
+
+> Learning is **NOT** the solution to every problem in robotics.
 
 
-## Resources:
+## 1.4 How to make robots learn?
+
+Neural Networks
+
+
+## Resources: Books
+
+<!-- _class: cols-2 -->
+
+<div class=ldiv>
+
+![#center h:400](https://m.media-amazon.com/images/I/A10G+oKN3LL._AC_UF1000,1000_QL80_.jpg)
+
+*Deep Learning*
+by Ian Goodfellow, Yoshua Bengio, Aaron Courville
+
+</div>
+
+<div class=rdiv>
+
+![#center h:400](https://m.media-amazon.com/images/I/4109zaBEgJL._AC_UF1000,1000_QL80_.jpg)
+
+*Modern Robotics: Mechanics, Planning, and Control*
+by Kevin M. Lynch, Frank C. Park 
+
+</div>
+
+## Resources: Online Courses
+
