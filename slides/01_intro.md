@@ -103,6 +103,7 @@ Mobile Manipulation
 
 > **Robot learning** is a research field at the intersection of **machine learning** and **robotics**. It studies techniques allowing a robot to acquire novel skills or adapt to its environment through learning algorithms.
 
+![bg right:40% ](https://cdn-wordpress-info.futurelearn.com/info/wp-content/uploads/f338ce63-774c-4034-9278-3f3a2593c68b-768x768.png)
 
 
 ## 1.2 Why Robot Learning?
@@ -117,7 +118,8 @@ Mobile Manipulation
 
 ## 1.4 How to make robots learn?
 
-Neural Networks
+These days, many robots are based on **deep learning** techniques.
+
 
 
 ## Resources: Books
@@ -138,7 +140,7 @@ by Ian Goodfellow, Yoshua Bengio, Aaron Courville
 ![#center h:400](https://m.media-amazon.com/images/I/4109zaBEgJL._AC_UF1000,1000_QL80_.jpg)
 
 *Modern Robotics: Mechanics, Planning, and Control*
-by Kevin M. Lynch, Frank C. Park 
+by Kevin M. Lynch, Frank C. Park
 
 </div>
 
