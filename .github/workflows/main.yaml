@@ -33,6 +33,9 @@ jobs:
       - name: Copy index.html
         run: cp index.html build/index.html
 
+      - name: Copy _config.yaml
+        run: cp _config.yaml build/_config.yaml
+
       - name: Check if docs folder exists
         id: docs-folder-exists
         run: bash -c "[[ -d slides ]] ; echo \"has_docs=\$?\" >> \"$GITHUB_OUTPUT\""
