@@ -6,4 +6,11 @@
 
 <body> 
     <h1>Robot Perception and Control</h1>
+
+    <ul>
+        {% assign dist_files = site.static_files | where: 'path', '/dist' %}
+        {% for file in dist_files %}
+            <li><a href="{{ file.path }}">{{ file.name }}</a></li>
+        {% endfor %}
+    </ul>
 </body> 
