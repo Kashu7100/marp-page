@@ -13,6 +13,7 @@ headingDivider: [2,3]
 <!-- _header: "" -->
 <!-- _footer: "" -->
 <!-- _paginate: "" -->
+<!-- _backgroundImage: url('https://marp.app/assets/hero-background.svg') -->
 
 # Robot Perception and Control
 
