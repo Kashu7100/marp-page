@@ -27,7 +27,16 @@ kyamazak@andrew.cmu.edu
 RL research for legged robots was mainly limited to simulation, and only few and comparably simple examples have been deployed on real systems. 
 [[1](https://arxiv.org/pdf/1901.08652.pdf)]
 
+<!-- _class: cols-2 -->
+
+<div class=ldiv>
+
+</div>
+<div class=rdiv>
+
 ![#center](img/learn_motor_skills.png)
+
+</div>
 
 ## Learning by cheating
 Proposed two-stage training procedure, which first train a privileged agent and then using the agent as a teacher to train a purely vision-based system, for effective imitation learning [[1](https://arxiv.org/pdf/1912.12294.pdf)] [[code](https://github.com/dotchen/LearningByCheating)].  
@@ -41,7 +50,16 @@ Proposed two-stage training procedure, which first train a privileged agent and 
 
 ## Learning Locomotion over Challenging Terrain
 
+<!-- _class: cols-2 -->
+
+<div class=ldiv>
+
+</div>
+<div class=rdiv>
+
 ![#center](img/locomotion.png)
+
+</div>
 
 ## Perceptive locomotion for quadrupeds
 Presented a three stage training and deploy method to perform zero-shot sim-to-real transfer [[1](https://arxiv.org/pdf/2201.08117.pdf)]. 
@@ -65,7 +83,19 @@ Presented a three stage training and deploy method to perform zero-shot sim-to-r
 
 [[1](https://ashish-kmr.github.io/rma-legged-robots/rma-locomotion-final.pdf)]
 
-![#center w:700](img/rma.png)
+
+
+<!-- _class: cols-2 -->
+
+<div class=ldiv>
+
+</div>
+<div class=rdiv>
+
+![#center](img/rma.png)
+
+</div>
+
 
 ## Learning to Walk in Minutes
 Presents a training setup that achieves fast policy generation for real-world robotic tasks by using massive parallelism on a single workstation GPU [[1](https://arxiv.org/pdf/2109.11978.pdf)] [[code](https://github.com/leggedrobotics/legged_gym)]. 

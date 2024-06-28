@@ -1256,6 +1256,50 @@ section.pin-3 .rimg {
 }
 
 
+section.pon-3 {
+    overflow: visible;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: 7% 42% 48%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        "slideheading slideheading"
+        "leftpanel rightpanel"
+        "bottompanel  bottompanel";
+  }
+  section.pon-3 h2, section.pon-3 h3 {
+    grid-area: slideheading;
+    font-size: var(--font-size-2-3);
+  }
+  section.pon-3 .bdiv { 
+    grid-area: bottompanel; 
+  }
+  section.pon-3 .ldiv { 
+    grid-area: leftpanel; 
+  }
+  section.pon-3 .rdiv { 
+    grid-area: rightpanel; 
+  }
+  section.pon-2 .bimg { 
+    grid-area: bottompanel;
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+  }
+  section.pon-3 .limg { 
+    grid-area: leftpanel;
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+  }
+  section.pon-3 .rimg { 
+    grid-area: rightpanel;
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+  }
+
+
 section.bq-blue blockquote, section.bq-red blockquote, section.bq-green blockquote, section.bq-purple blockquote, section.bq-black blockquote {
   padding: 1%;
   letter-spacing: 0px;

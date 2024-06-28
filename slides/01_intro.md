@@ -6,6 +6,7 @@ math: mathjax
 theme: am_dark
 paginate: true
 headingDivider: [2,3]
+footer: Kashu Yamazaki, 2024
 # backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
@@ -104,9 +105,12 @@ Mobile Manipulation
 
 > **Robot learning** is a research field at the intersection of **machine learning** and **robotics**. It studies techniques allowing a robot to acquire novel skills or adapt to its environment through learning algorithms.
 
+
 - *Sensing*: observe the physical world through multimodal senses
 - *Perception*: acquiring knowledge from sensor data
-- *Action*: 
+- *Action*: act on the environment to execute task / acquire new observation
+
+A key challenge in Robot Learning is to close the perception-action loop.
 
 ![bg right:35% w:90%](https://cdn-wordpress-info.futurelearn.com/info/wp-content/uploads/f338ce63-774c-4034-9278-3f3a2593c68b-768x768.png)
 
@@ -121,8 +125,9 @@ Mobile Manipulation
 
 ## 1.3 When to make robots learn?
 
-<!-- _class:  bq-red -->
 
+
+<!-- _class:  bq-red -->
 > Learning is **NOT** the solution to every problem in robotics.
 
 

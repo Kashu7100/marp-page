@@ -6,6 +6,7 @@ math: mathjax
 theme: am_dark
 paginate: true
 headingDivider: [2,3]
+footer: Kashu Yamazaki, 2024
 # backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
