@@ -123,19 +123,31 @@ A key challenge in Robot Learning is to close the perception-action loop.
 - *Data and Compute*: large scale data / compute
 - *Hardware*: low-cost robot hardware becomes available
 
-## 1.3 When to make robots learn?
+## 1.3 When Should Robots Learn?
 
+Robots should be designed to learn in situations where pre-existing knowledge or established protocols are insufficient or non-existent, requiring them to discover knowledge from data:
 
+- High Environmental Uncertainty
+- Significant Variation in Observations
+- Lack of Reliable Priors
+- Complex or Unstructured Environments
+- Continuous Improvement
 
 <!-- _class:  bq-red -->
 > Learning is **NOT** the solution to every problem in robotics.
+>
+> When the task can be modeled without knowledge from data, learning algorithm is not required (and learning algorithm tend to perform worse).
 
 
 ## 1.4 How to make robots learn?
 
-These days, many robots are based on **deep learning** techniques.
+These days, many robot learning methods are based on **deep learning** techniques.
 
 
+
+![bg right:40% w:95%](https://upload.wikimedia.org/wikipedia/commons/2/26/Deep_Learning.jpg)
+
+## Deep Learning: Basics
 
 ## Resources: Books
 
@@ -159,5 +171,6 @@ by Kevin M. Lynch, Frank C. Park
 
 </div>
 
-## Resources: Online Courses
+## Resources: Online Materials
 
+- [CS391R (UT Austin) by Yuke Zhu](https://www.cs.utexas.edu/~yukez/cs391r_fall2023/syllabus.html): lecture slides

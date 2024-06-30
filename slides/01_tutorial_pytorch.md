@@ -71,7 +71,7 @@ There are several merits of using Docker.
 
 - **List Images**: `docker images`
 - **Remove an Image**: `docker rmi <imageID>`
-- **Remove all Images**: `docker rmi $(docker images -a -q)`
+- **Prune an Image**: `docker image prune`
 - **Get an Image**: `docker pull`
 - **Build an Image**: `docker build -t <imageName> -f Dockerfile .`
 
@@ -81,7 +81,6 @@ There are several merits of using Docker.
 
 - **List Containers**: `docker ps -a`
 - **Remove a Container**: `docker rm <containerID>`
-- **Stop a running Container**: `docker stop <containerID>`
 - **Start a Container**: `docker run <imageName>`
 - **Attach to a running Shell**: `docker exec -it <containerID> bash` 
 
@@ -151,6 +150,9 @@ docker run --rm -it --gpus all -p 5004:8888 -v ~/data:/data <imageName>
     docker run  --gpus 'all,"capabilities=compute,utility,graphics"' -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY
     ```
 
+## Accessing Devices from the Container
+
+
 
 ## PyTorch 🔥
 
@@ -158,5 +160,7 @@ docker run --rm -it --gpus all -p 5004:8888 -v ~/data:/data <imageName>
 <!-- _footer: "" -->
 <!-- _paginate: "" -->
 
-## 
+## Computational Graph
+
+There are two elements that consists the computational graph: valuable and operator (In PyTorch `tensor` and `function`).
 
