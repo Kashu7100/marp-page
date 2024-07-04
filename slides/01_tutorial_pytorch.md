@@ -150,9 +150,6 @@ docker run --rm -it --gpus all -p 5004:8888 -v ~/data:/data <imageName>
     docker run  --gpus 'all,"capabilities=compute,utility,graphics"' -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY
     ```
 
-## Accessing Devices from the Container
-
-
 
 ## PyTorch 🔥
 
@@ -162,5 +159,142 @@ docker run --rm -it --gpus all -p 5004:8888 -v ~/data:/data <imageName>
 
 ## Computational Graph
 
-There are two elements that consists the computational graph: valuable and operator (In PyTorch `tensor` and `function`).
+<!-- _class: cols-3 -->
 
+<div class=ldiv>
+
+Two elements of computational graph: `valuable (blue)`  and `operator (green)`.
+
+![#center w:200](img/computational_graph.png)
+
+$$
+c = \sum_{i}^{B}\sum_{j}^{C}(x_{i,j} \cdot y_{i,j} + z_{i,j})
+$$
+
+</div>
+<div class=mdiv>
+
+```python
+import numpy as np
+
+B, C = 3, 4
+x = np.random.randn(B,C)
+y = np.random.randn(B,C)
+z = np.random.randn(B,C)
+
+# forward pass
+a = x * y
+b = a + z
+c = np.sum(b)
+
+# backward pass (gradient computation)
+grad_c = np.ones((1))
+grad_b = np.tile(grad_c, b.shape)
+grad_a = grad_b.copy()
+grad_z = grad_b.copy()
+grad_x = grad_a * y
+grad_y = grad_a * x
+```
+
+</div>
+<div class=rdiv>
+
+```python
+import torch
+
+B, C = 3, 4
+x = torch.randn(B,C, requires_grad=True)
+y = torch.randn(B,C, requires_grad=True)
+z = torch.randn(B,C, requires_grad=True)
+
+# forward pass
+a = x * y
+b = a + z
+c = b.sum()
+
+# backward pass (gradient computation)
+c.backward()
+```
+
+PyTorch implements computational graph with: `tensor` and `function`, which comes with AD for easy gradient computation. 
+
+</div>
+
+## Tensors
+
+## Devices
+
+<!-- _class: cols-2 -->
+
+<div class=ldiv>
+
+**CUDA and CPU**
+
+```python
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+# move the array to a device
+torch_arr = torch_arr.to(device)
+print(torch_arr.device)
+
+# move to cuda
+torch_arr = torch_arr.to("cuda")
+torch_arr = torch_arr.to("cuda:0") # GPU at idx 0
+torch_arr = torch_arr.cuda()
+
+# move to cpu
+torch_arr = torch_arr.to("cpu")
+torch_arr = torch_arr.cpu()
+```
+
+</div>
+<div class=rdiv>
+
+**NumPy Array to Torch Tensor (CPU)**
+
+```python
+# Numpy to Torch
+torch_arr = torch.from_numpy(np_arr) # cpu tensor
+
+# Torch to Numpy
+np_arr = torch_arr.cpu().numpy() # first move to cpu
+```
+
+**Type Checking**
+
+```python
+type(torch_arr.cuda())
+# torch.cuda.FloatTensor
+type(torch_arr.cpu())
+# torch.cpu.FloatTensor
+type(np_arr)
+# numpy.ndarray
+```
+
+</div>
+
+## Gradients
+
+
+## Optimizers and Loss functions
+
+
+## nn.Module [docs](https://pytorch.org/docs/stable/notes/modules.html)
+
+A neural network model and its components can be represented by a `nn.Module` class.
+
+```python
+class MLP(nn.Module):
+    def __init__(self, ):
+        super().__init__() # you have to call this in all child class!
+        self.layer1 = nn.Linear(764, 100) # nn.Linear also inherits nn.Module and implements Linear layer (y = w*x + b)
+        self.layer2 = nn.Linear(100, 10)
+
+    def forward(self, x): # forward is called in __call__() so that you can run the forward pass just by module(x)
+        return self.layer2(F.relu(self.layer(x)))
+```
+
+- `__init__`: defines the parts that make up the model (sub-module or parameters)
+- `forward`: performs the actual forward computation
+
+PyTorch pre-defines common modules of the modern deep neural networks. See more at [basic building blocks](https://pytorch.org/docs/stable/nn.html) 

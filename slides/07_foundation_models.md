@@ -49,8 +49,14 @@ kyamazak@andrew.cmu.edu
 
 ![#center](https://robotics-transformer-x.github.io/img/overview.png)
 
+A large-scale collection of datasets from 22 different robots collected through a collaboration between 21 institutions, demonstrating 527 skills (160266 tasks). The dataset follows the `RLDS` format.
+
 ## 1.2 DROID
 
+DROID uses the same hardware setup using Panda robot across all 13 institutions to streamline data collection while maximizing portability and flexibility.
+
+![bg right:35% w:90%](https://droid-dataset.github.io/figures/droid_setup.png)
+![bg vertical right:35% w:90%](https://droid-dataset.github.io/figures/droid_viewpoint_distribution.png)
 
 ##  2. Models
 
@@ -67,3 +73,5 @@ kyamazak@andrew.cmu.edu
 
 
 ![bg right:40% 100%](img/rt2_arch.png)
+
+## RT-X

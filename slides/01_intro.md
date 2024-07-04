@@ -24,15 +24,6 @@ Last updated: Jul / 25 /2024
 Kashu Yamazaki
 kyamazak@andrew.cmu.edu
 
----
-
-<!-- _class: toc_a -->
-<!-- _header: "" -->
-<!-- _footer: "" -->
-<!-- _paginate: "" -->
-
-- [Logistics](#3)
-
 
 ## Logistics
 
@@ -58,11 +49,18 @@ kyamazak@andrew.cmu.edu
 
 **Grading Policy**
 
-- HWs (30%)
-- Quizzes (10%)
-- Midterm (30%)
-- Final Project (30%)
+- HWs (30%): 5 home works
+- Quizzes (10%): 5 quizzes each worth 20 points
+- Midterm (30%): $\max(0.2 \cdot \sum(\text{quizzes}) + 0.8 \cdot \text{midterm}, \text{midterm})$
+- Final Project (30%): project report + presentation
 
+A: 90\% ~ , B: 80\% ~ 90 \%, C: 70\% ~ 80 \%, D: 60\% ~ 70 \%
+
+**Submission Policy**
+- HWs: $-5\%$ penalty / day from the total points of the assignment after due.
+- Final Project: No late submission.
+
+**Every submission is due midnight (11:59 pm) on the date specified.**
 
 ## Robot Learning
 
@@ -136,7 +134,37 @@ These days, many robot learning methods are based on **deep neural networks** wi
 
 
 ![#center](https://www.mathworks.com/solutions/artificial-intelligence/ai-robotics/_jcr_content/mainParsys/band_copy_1227855798/mainParsys/pictogram.adapt.full.medium.svg/1712662010437.svg)
-<!-- ![bg right:40% w:95%](https://upload.wikimedia.org/wikipedia/commons/2/26/Deep_Learning.jpg) -->
+
+## Multi-modality Sensory
+
+<!-- _class: cols-3 -->
+
+<div class=ldiv>
+
+![#center h:180](https://www.repairerdrivennews.com/wp-content/uploads/2018/01/velodyne-vlp-16-puck.jpg)
+LiDAR sensor
+![#center h:180](https://static.bhphoto.com/images/multiple_images/images500x500/1598955319_IMG_1410725.jpg)
+Stereo Depth sensor
+
+</div>
+
+<div class=mdiv>
+
+![h:180](https://m.media-amazon.com/images/I/61Th+lc12aL._AC_UF894,1000_QL80_.jpg)
+RGBD camera, Microphone 
+![#center h:180](https://www.researchgate.net/publication/308860567/figure/fig5/AS:413685446135814@1475641704716/IMU-sensor-with-a-scheme-of-the-measured-Euler-angles.png)
+IMU (Gyro/Acceleration/Barometer)
+
+</div>
+
+<div class=rdiv>
+
+![h:180](https://www.robotics247.com/images/article/BeBop_Sensors_01.jpg)
+Tactile sensor
+![#center h:180](https://www.roboct-global.com/uploads/202226482/high-torque-robot-joint-module02185840434.jpg)
+Joint Position/Velocity/Torque
+
+</div>
 
 ## Deep Learning
 
@@ -146,9 +174,15 @@ These days, many robot learning methods are based on **deep neural networks** wi
 
 ## 2.1 Basics
 
+## Backpropagation 
+
+## MLP
+
 ## CNN
 
 ## RNN
+
+![#center w:900](https://miro.medium.com/v2/resize:fit:1194/1*B0q2ZLsUUw31eEImeVf3PQ.png)
 
 ## Scaled Dot product Attention
 
