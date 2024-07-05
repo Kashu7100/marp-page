@@ -28,29 +28,32 @@ kyamazak@andrew.cmu.edu
 
 <div class=ldiv>
 
+Actuators are extremely difficult to model accurately. 
+- *nonlinear* and *non-smooth* dissipation in dynamics.
+- contains cascaded feedback loops and a number of internal states that are not even directly observable.
 
+Actuator Networks is a **data driven** solution that can provide better simulation of an actuator via supervised learning.
 
-<!-- RL research for legged robots **was** mainly limited to simulation, and only few simple examples had been deployed on real systems.  -->
-
+- learns **action-to-torque** relationship that includes all software and hardware dynamics.
+- actuator network estimated torque at the joints given a history of position errors and velocities.
 
 </div>
 <div class=rdiv>
 
 ![#center w:600](img/learn_motor_skills.png)
 
+> collect *joint position errors*, *velocities*, and *torque* using a controller for more than a million samples with varied amplitude and frequency and manual disturbances for diverse situation.
+
 </div>
 
-## Learning by cheating
-Proposed two-stage training procedure, which first train a privileged agent and then using the agent as a teacher to train a purely vision-based system, for effective imitation learning [[1](https://arxiv.org/pdf/1912.12294.pdf)] [[code](https://github.com/dotchen/LearningByCheating)].  
+## Learning by Cheating [arxiv](https://arxiv.org/abs/1912.12294) [github](https://github.com/dotchen/LearningByCheating)
+
+Proposed two-stage training procedure, which first train a privileged agent and then using the agent as a teacher to train a purely vision-based system, for effective imitation learning. This paradigm is the underlying concept in the legged RL.
 
 
 ![#center w:800](img/learn_by_cheat.png)
 
-## Learning Locomotion over Challenging Terrain
-
-[[1](https://arxiv.org/pdf/2010.11251.pdf)] [[code](https://github.com/leggedrobotics/learning_quadrupedal_locomotion_over_challenging_terrain_supplementary)]
-
-## Learning Locomotion over Challenging Terrain
+## Learning Locomotion over Challenging Terrain [arxiv](https://arxiv.org/abs/2010.11251) [github](https://github.com/leggedrobotics/learning_quadrupedal_locomotion_over_challenging_terrain_supplementary)
 
 <!-- _class: cols-2 -->
 
@@ -59,9 +62,42 @@ Proposed two-stage training procedure, which first train a privileged agent and 
 </div>
 <div class=rdiv>
 
-![#center](img/locomotion.png)
+![#center w:100%](img/locomotion.png)
 
 </div>
+
+## RMA: Rapid Motor Adaptation [paper](https://ashish-kmr.github.io/rma-legged-robots/rma-locomotion-final.pdf)
+
+
+<!-- _class: cols-2 -->
+
+<div class=ldiv>
+
+</div>
+<div class=rdiv>
+
+![#center](img/rma.png)
+
+</div>
+
+## Learning to Walk in Minutes [arvix](https://arxiv.org/abs/2109.11978) [github](https://github.com/leggedrobotics/legged_gym)
+
+Presents a training setup that achieves fast policy generation for real-world robotic tasks by using massive parallelism on a single workstation GPU (showcase of Isaac Gym).
+
+- A codebase is widely used as baseline for developing legged locomotion system.
+
+![#center](img/learn_to_walk_in_minutes.png)
+
+## Walk These Ways [arxiv](https://arxiv.org/abs/2212.03238)
+
+
+
+
+## Perceptive locomotion
+
+<!-- _class: trans -->
+<!-- _footer: "" -->
+<!-- _paginate: "" -->
 
 ## Perceptive locomotion for quadrupeds
 Presented a three stage training and deploy method to perform zero-shot sim-to-real transfer [[1](https://arxiv.org/pdf/2201.08117.pdf)]. 
@@ -81,11 +117,16 @@ Presented a three stage training and deploy method to perform zero-shot sim-to-r
 
 ![#center w:1000](img/perceptive_3.png)
 
-## RMA: Rapid Motor Adaptation for Legged Robots
+## Legged Locomotion using Egocentric Vision [arxiv](https://arxiv.org/abs/2211.07638) 
 
-[[1](https://ashish-kmr.github.io/rma-legged-robots/rma-locomotion-final.pdf)]
+![#center w:800](img/ego_loco.png)
 
 
+
+## Parkour Learning [arxiv](https://arxiv.org/abs/2309.05665)
+
+
+## Extreme Parkour [arxiv](https://arxiv.org/abs/2309.14341)
 
 <!-- _class: cols-2 -->
 
@@ -94,12 +135,8 @@ Presented a three stage training and deploy method to perform zero-shot sim-to-r
 </div>
 <div class=rdiv>
 
-![#center](img/rma.png)
+![#center](img/extreme_parkour.png)
 
 </div>
 
-
-## Learning to Walk in Minutes
-Presents a training setup that achieves fast policy generation for real-world robotic tasks by using massive parallelism on a single workstation GPU [[1](https://arxiv.org/pdf/2109.11978.pdf)] [[code](https://github.com/leggedrobotics/legged_gym)]. 
-
-![#center](img/learn_to_walk_in_minutes.png)
+## 
