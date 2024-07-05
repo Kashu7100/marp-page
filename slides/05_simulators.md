@@ -65,3 +65,12 @@ URDF (Unified Robot Description Format) is a standard format based on XML used t
 
 ## Language in Simulator
 
+
+## Sim2Real
+
+<!-- _class: trans -->
+<!-- _footer: "" -->
+<!-- _paginate: "" -->
+
+
+## Domain Randomization

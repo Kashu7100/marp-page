@@ -132,3 +132,63 @@ $$
 $$
 
 </div>
+
+## Traditional 3D representations
+
+**Voxel**: simple extension of concept of pixel into 3D
+$\checkmark$ we can reuse the thechniques (CNNs, etc.) used in images
+✗ occupies too much memory (thus usually limited to $\sim 256^3$)
+
+**Octree**: hierarchical voxel
+$\checkmark$ high quality 3D with less memory
+✗ hard to generate and store
+
+**Point Cloud**: group of points represents the 3D scene
+$\checkmark$ much compact compared to voxel
+✗ cannot represent the surface
+
+**Mesh**: group of triangles (polygons) represents the 3D scene
+$\checkmark$ very compact
+✗ hard to obtain the mesh
+
+![bg right:25% h:150](img/voxel_rabbit.png)
+![bg right:25% h:150 vertical](img/octree_rabbit.png)
+![bg right:25% h:150 vertical](img/pc_rabbit.png)
+![bg right:25% h:150 vertical](img/mesh_rabbit.png)
+
+## Neural Fields
+
+A field is a physical quantity that has a value for each point in space and time. A field can be expressed as a function that takes **spacial coordinates as independent variables**. A neural field is a field that is parameterized fully or partially by neural networks.
+
+| fields | input/output | example |
+|---|---|---|
+| Occupancy Field | position $\rightarrow$ existance | Occupancy Networks |
+| Distance Field | position $\rightarrow$ distance | DeepSDF, PIFu | 
+| Radiance Field | position + direction $\rightarrow$ color + density | NeRF | 
+| Scene Flow Field | position $\rightarrow$ scene flow | Neural Scene Flow Fields | 
+| Semantic Field | position $\rightarrow$ semantics | LeRF | 
+
+## NeRF [arxiv](https://arxiv.org/abs/2003.08934)
+
+<!-- _class: pin-3 -->
+
+<div class=tdiv>
+
+Neural Rediance Field (NeRF) is a field represented by 5D vector (3D location $(x, y, z)$ and 2D viewing direction $(\theta, \phi)$) and has color $c=(r,g,b)$ and volume density $\sigma$ for each point in space. NeRF approximate this continuous 5D scene representation with an MLP.
+
+- the weights of the MLP are the *model of the world* (overfits the model to one scene).
+- the most famous instance of neural fields.
+
+</div>
+<div class=ldiv>
+
+![w:100%](img/nerf_model.png)
+
+</div>
+<div class=rdiv>
+
+![w:100%](img/nerf.png)
+
+</div>
+
+## Gaussian Splatting

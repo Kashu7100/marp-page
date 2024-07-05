@@ -24,6 +24,11 @@ Last updated: Jul / 25 /2024
 Kashu Yamazaki
 kyamazak@andrew.cmu.edu
 
+## Image Perception Tasks
+
+![bg right:50% w:100%](https://manipulation.csail.mit.edu/data/coco_instance_segmentation.jpeg)
+
+
 ## Image Classification
 
 <!-- _class: trans -->
@@ -82,11 +87,11 @@ The operation of $+ x$ is called **residual connection** that performs an identi
 
 ## CLIP [arxiv](https://arxiv.org/abs/2103.00020) [github](https://github.com/openai/CLIP)
 
-Learning directly from raw text about images **can leverage a much broader source of supervision** than using a fixed set of predetermined object categories. 
+Learning directly from raw text about images leverages *a broader source of supervision* compared to using a fixed set of predetermined object categories. CLIP introduced a simple yet effective contrastive objective to learn a vision-language embedding space, where similar concepts are pulled together and different concepts are pushed apart.
 
 ![#center](img/clip.png)
 
-## CLIP
+## CLIP [arxiv](https://arxiv.org/abs/2103.00020) [github](https://github.com/openai/CLIP)
 
 Sample implementation:
 
@@ -114,7 +119,7 @@ loss = (loss_i + loss_t)/2
 <!-- _footer: "" -->
 <!-- _paginate: "" -->
 
-##
+## YOLO
 
 ## Segmentation
 
@@ -122,4 +127,8 @@ loss = (loss_i + loss_t)/2
 <!-- _footer: "" -->
 <!-- _paginate: "" -->
 
-## SAM
+## SAM [arxiv](https://arxiv.org/abs/2304.02643)
+
+![#center w:900](img/sam.png)
+
+## Robot Perception
