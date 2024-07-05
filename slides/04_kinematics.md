@@ -104,7 +104,26 @@ Inverse kinematics (IK) is essentially the reverse operation of FK: computing co
 
 ## Analytical Inverse Kinematics
 
+Let's consider a 2D arm in 2D space as in the Figure. 
+From law of cosines:
 
+$$
+\cos(\pi-\theta_2) = -\frac{x_2^2+y_2^2-L_1^2-L_2^2}{2L_1L_2}
+$$
+
+Assuming solution exists ($-1\leq RHS \leq 1$), 
+$$
+\theta_2 = \pm\cos^{-1}\left(\frac{x_2^2+y_2^2-L_1^2-L_2^2}{2L_1L_2}\right)
+$$
+
+- Note that *elbow down* and *elbow up* solutions ($\pm$) exist.
+
+Then using the $\theta_2$, we can find a $\theta_1$ as:
+$$
+\theta_1 = \operatorname{atan2}(y_2, x_2) - \operatorname{atan2}(L_2\sin\theta_2, L_1+ L_2\cos\theta_2)
+$$
+
+![bg right:35% w:95%](https://www.researchgate.net/profile/Firas-Raheem/publication/331685972/figure/fig1/AS:735680497983490@1552411307984/The-Inverse-Kinematics-Solutions-Based-on-Trigonometry_Q320.jpg)
 
 ## Analytical Inverse Kinematics
 
