@@ -23,18 +23,20 @@ Last updated: Jul / 25 /2024
 Kashu Yamazaki
 kyamazak@andrew.cmu.edu
 
-## Learning Agile and Dynamic Motor Skills
-RL research for legged robots was mainly limited to simulation, and only few and comparably simple examples have been deployed on real systems. 
-[[1](https://arxiv.org/pdf/1901.08652.pdf)]
-
+## Actuator Networks　[arxiv](https://arxiv.org/abs/1901.08652)
 <!-- _class: cols-2 -->
 
 <div class=ldiv>
 
+
+
+<!-- RL research for legged robots **was** mainly limited to simulation, and only few simple examples had been deployed on real systems.  -->
+
+
 </div>
 <div class=rdiv>
 
-![#center](img/learn_motor_skills.png)
+![#center w:600](img/learn_motor_skills.png)
 
 </div>
 

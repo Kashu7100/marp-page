@@ -76,6 +76,8 @@ The operation of $+ x$ is called **residual connection** that performs an identi
 
 ## ViT
 
+![bg right:55% w:700](img/vit.png)
+
 ## 
 
 ## CLIP [arxiv](https://arxiv.org/abs/2103.00020) [github](https://github.com/openai/CLIP)

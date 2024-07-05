@@ -24,4 +24,6 @@ Last updated: Jul / 25 /2024
 Kashu Yamazaki
 kyamazak@andrew.cmu.edu
 
+## GAIL
+
 ## Diffusion Policy

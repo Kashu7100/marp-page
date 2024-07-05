@@ -176,11 +176,13 @@ Joint Position/Velocity/Torque
 
 ## Backpropagation 
 
-## MLP
+## Linear/Dense Layer
 
-## CNN
+## Convolution Layer
 
-## RNN
+![](https://miro.medium.com/v2/resize:fit:790/1*X3c2tflJ-HaeJq4hWbQUZw.gif)
+
+## Recurrent Cells
 
 ![#center w:900](https://miro.medium.com/v2/resize:fit:1194/1*B0q2ZLsUUw31eEImeVf3PQ.png)
 
