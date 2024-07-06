@@ -66,28 +66,90 @@ def transform(a, alpha, d, theta):
 
 ## Forward Kinematics
 
-Forward kinematics is the problem of finding the end-effector position and orientation of a robot manipulator given the joint angles and link lengths.
+Forward kinematics is the problem of finding the end-effector position and orientation $x(t)$ of a robot manipulator given the joint angles $\theta(t)$ and link lengths.
 
 $$
 x(t) = f(\theta(t))
 $$
 
-Using the 
+We can use the DH parameters of a robot to simply represent the forward kinematics as a chain of transformations starting from a **base link**, which connects to the origin.
 ```python
+def fk(theta):
+    trans = np.identity(4)
+    for (_a, _alpha, _d, _theta) in dh_params(theta):
+        trans = trans @ transform(_a, _alpha, _d, _theta)
+    return trans
 ```
 
 ## Forward Kinematics
 
-The DH parameters for forward kinematics of the leg are given as:
+<!-- _class: cols-3 -->
 
-| Link | $\alpha$ | $a$ | $d$ | $\theta$ | 
+<div class=ldiv>
+
+Let's consider the *right front leg* joints (coordinate systems below):
+
+![#center h:400](img/leg_ik_coord.png)
+
+</div>
+<div class=mdiv>
+
+The DH parameters of the leg:
+
+| Link | $a$ | $\alpha$ | $d$ | $\theta$ | 
 | --- | --- | --- | --- | --- |
-| 0-1 | $0$ | $L_1$ | $0$ | $\theta_1$ | 
-| 1-2 | $-\pi/2$ | 0 | 0 | $-\pi/2$ | 
-| 2-3 | $0$ | $L_2$ | $0$ | $\theta_2$ | 
-| 3-4 | $0$ | $L_3$ | $0$ | $\theta_3$ | 
+| 0-1 | $L_1$ | $0$ | $0$ | $\theta_1$ | 
+| 1-2 | $0$ | $-\pi/2$ | $0$ | $-\pi/2$ | 
+| 2-3 | $L_2$ | $0$ | $0$ | $\theta_2$ | 
+| 3-4 | $L_3$ | $0$ | $0$ | $\theta_3$ | 
 
-![bg right:30% w:90%](img/leg_ik_coord.png)
+From the table, we can construct the each transformation $T$ and the forward kinematics is given by the chain of those transformations as $T_0^4$.
+
+</div>
+<div class=rdiv>
+
+$$
+T_0^1 = \begin{bmatrix}
+\cos(\theta_1) & -\sin(\theta_1) & 0 & -L_1\cos(\theta_1) \\
+\sin(\theta_1) & \cos(\theta_1) & 0 & -L_1\sin(\theta_1) \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+$$
+T_1^2 = \begin{bmatrix}
+0 & -1 & 0 & 0 \\
+-1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+$$
+T_2^3 = \begin{bmatrix}
+\cos(\theta_2) & -\sin(\theta_2) & 0 & L_2\cos(\theta_2) \\
+\sin(\theta_2) & \cos(\theta_2) & 0 & L_2\sin(\theta_2) \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+$$
+T_2^3 = \begin{bmatrix}
+\cos(\theta_3) & -\sin(\theta_3) & 0 & L_3\cos(\theta_3) \\
+\sin(\theta_3) & \cos(\theta_3) & 0 & L_3\sin(\theta_3) \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+$$
+T_0^4 = T_0^1T_1^2T_2^3T_3^4
+$$
+
+</div>
+
 
 ## Inverse Kinematics
 
@@ -197,6 +259,12 @@ $$
 \Delta\theta = J^{-1}(\theta^0)(x_d - f(\theta^0))
 $$
 
-- In practice, **Moore-Penrose pseudo-inverse** of a Jacobian $J^+$ is used and we do not need to assume square and invertible. 
+- In practice, **pseudo-inverse** of a Jacobian $J^+$ is used and we do not need to assume square and invertible. 
+
+We will **iteratively update** the guess until it converges to a solution.
+
+$$
+\theta^{i+1} \longleftarrow \theta^i + \eta\Delta\theta
+$$
 
 ##

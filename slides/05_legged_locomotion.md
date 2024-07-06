@@ -23,6 +23,25 @@ Last updated: Jul / 25 /2024
 Kashu Yamazaki
 kyamazak@andrew.cmu.edu
 
+## What can we do with RL $\times$ Legged Robots?
+
+<!-- _class: cols-2 -->
+
+<div class=ldiv>
+
+![#center w:450](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzV2OXBtOGZrbjgwZTh0ajQ1OTdid3lpOXVlemMxNjhvdDYwNzFkaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8s6MYX8lm3TTXxk5VM/giphy.webp)
+
+![#center w:450](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmxnMXp4eWF6aGRlZTE1OXI4ajZna2s5NGM0dWhnMGZoYXQwZnM2NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FCnmwZXtTdr4fU8EL1/giphy.webp)
+
+</div>
+
+<div class=rdiv>
+
+![#center w:400](https://robot-parkour.github.io/static/images/preview.gif)
+![#center w:400](https://robothusiast.com/wp-content/uploads/2024/03/ANYmal-Robot-Doing-Parkour.gif)
+
+</div>
+
 ## Actuator Networks　[arxiv](https://arxiv.org/abs/1901.08652)
 <!-- _class: cols-2 -->
 
@@ -139,4 +158,4 @@ Presented a three stage training and deploy method to perform zero-shot sim-to-r
 
 </div>
 
-## 
+## Humanoid Parkour Learning [arxiv](https://arxiv.org/abs/2406.10759v1)

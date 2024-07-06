@@ -79,11 +79,82 @@ The operation of $+ x$ is called **residual connection** that performs an identi
 
 ![bg right:20% w:100%](img/res_block.png)
 
-## ViT
+## ViT [arxiv](https://arxiv.org/abs/2010.11929)
 
-![bg right:55% w:700](img/vit.png)
+Applied pure transformer directly to sequences of *image patches*.
 
-## 
+- An image patch is a $16\times16$ pixel crop of the image that will be treated as an image token.
+- The patchify stem is implemented by a stride-$p$, $p\times p$ convolution ($p = 16$ by default) applied to the input image [[1](https://arxiv.org/abs/2106.14881)]. 
+
+<!-- _class:  bq-blue -->
+> Influence
+> 
+> Performance scales with dataset size and becomes a new de facto for image backbone.
+
+![bg right:50% w:600](img/vit_architecture.png)
+
+## Representing Image as Patches 
+<!-- https://theaisummer.com/vision-transformer/ -->
+For an input image $x\in \mathbb{R}^{H\times W\times C}$ and patch size $p$, the $N= \frac{HW}{p^2}$ image patches $x_p\in \mathbb{R}^{N\times (p^2 C)}$ will be created.
+
+- $p = 16$ for original ViT; thus $256\times256$ image is represented as $16\times16$ *image tokens*. 
+
+Sample implementation:
+```python
+from einops import rearrange
+proj = nn.Linear((patch_size**2)*channels, dim)
+x_p = rearrange(img, 'b c (h p) (w p) -> b (h w) (p p c)', p = patch_size)
+embedding = proj(x_p)
+```
+
+or equivalently:
+```python
+conv = nn.Conv2d(channels, dim, kernel_size=patch_size, stride=patch_size)
+embedding = rearrange(conv(img), 'b c h w -> b (h w) c')
+```
+
+## ViT vs ResNet
+
+- MHSAs and Convs exhibit opposite behaviors. **MHSAs are low-pass filters**, but **Convs are high-pass filters**.
+
+- MHSAs improve not only accuracy but also generalization by flattening the loss landscapes.
+
+[[1](https://arxiv.org/abs/2202.06709)]
+
+![bg right:45% w:100%](img/vit_loss_landscape.png)
+
+## ViT vs ResNet
+
+ViT models are less effective in capturing the high-frequency components (related to local structures) of images than CNN models [[1](https://arxiv.org/abs/2204.00993)]. 
+For ViTs to capture high-frequency components:
+* knowledge distillation using a CNN teacher model [[2](https://arxiv.org/abs/2012.12877)].
+* utilizing convolutional-like operation or multi-scale feature maps.  
+* use **RandAugment** [[3](https://arxiv.org/abs/1909.13719)]. 
+
+![bg right:45% w:100%](img/low_high_pass_filter.png)
+
+## ViT vs ResNet
+
+Robustness to input perturbations: 
+- **ResNet**: noise has a high frequency component and localized structure [[1](https://arxiv.org/abs/1412.6572)]
+- **ViT**: relatively low frequency component and a large structure (The border is clearly visible in the $16\times 16$ size patch.)
+
+    - When pre-trained with a sufficient amount of data, ViT are at least as robust as the ResNet counterparts on a broad range of perturbations [[2](https://arxiv.org/abs/2103.14586)].
+
+![bg right:45% w:100%](img/adv_attack.png)
+
+
+## ViT vs ResNet [arxiv](https://arxiv.org/abs/2105.07197)
+
+Is dicision based on texture or shape?
+
+- **ResNet**: relies on texture rather than shape [[2](https://arxiv.org/abs/1811.12231)]
+- **ViT**: little more robust to texture perturbation
+- **Human**: much robust to texture perturbation
+
+![center](img/cnn_texture.png)
+![bg right:35% w:100%](img/transformer_vs_cnn.png)
+
 
 ## CLIP [arxiv](https://arxiv.org/abs/2103.00020) [github](https://github.com/openai/CLIP)
 
@@ -120,6 +191,8 @@ loss = (loss_i + loss_t)/2
 <!-- _paginate: "" -->
 
 ## YOLO
+
+## DETR
 
 ## Segmentation
 

@@ -156,6 +156,8 @@ $\checkmark$ very compact
 ![bg right:25% h:150 vertical](img/pc_rabbit.png)
 ![bg right:25% h:150 vertical](img/mesh_rabbit.png)
 
+## 
+
 ## Neural Fields
 
 A field is a physical quantity that has a value for each point in space and time. A field can be expressed as a function that takes **spacial coordinates as independent variables**. A neural field is a field that is parameterized fully or partially by neural networks.
@@ -190,5 +192,10 @@ Neural Rediance Field (NeRF) is a field represented by 5D vector (3D location $(
 ![w:100%](img/nerf.png)
 
 </div>
+
+## Dex-NeRF [arxiv](https://arxiv.org/abs/2110.14217)
+
+![bg right:50% w:100%](img/dex_nerf.png)
+![bg vertical right:50% w:100%](img/dex_nerf_depth.png)
 
 ## Gaussian Splatting

@@ -75,3 +75,7 @@ DROID uses the same hardware setup using Panda robot across all 13 institutions 
 ![bg right:40% 100%](img/rt2_arch.png)
 
 ## RT-X
+
+## Octo [arxiv](https://arxiv.org/abs/2405.12213)
+
+![#center w:800](https://octo-models.github.io/architecture.jpg)
