@@ -225,10 +225,14 @@ $$
 
 where $x$ is the end-effector position and $\theta$ is the joint angles.
 
-If we consider the differentiation w. r. t. time, we can write the relationship between $\dot{x}$ and $\dot{\theta}$.
+If we consider the differentiation w. r. t. time, we can write the relationship between $\dot{x}$ (or $v$) and $\dot{\theta}$.
 
 $$
 \dot{x} = J(\theta)\dot{\theta}
+$$
+
+$$
+\dot{\theta} = J^{-1}(\theta)\dot{x}
 $$
 
 ## Basic Jacobian

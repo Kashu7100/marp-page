@@ -113,13 +113,13 @@ conv = nn.Conv2d(channels, dim, kernel_size=patch_size, stride=patch_size)
 embedding = rearrange(conv(img), 'b c h w -> b (h w) c')
 ```
 
-## ViT vs ResNet
+## ViT vs ResNet [arxiv](https://arxiv.org/abs/2202.06709)
 
 - MHSAs and Convs exhibit opposite behaviors. **MHSAs are low-pass filters**, but **Convs are high-pass filters**.
 
 - MHSAs improve not only accuracy but also generalization by flattening the loss landscapes.
 
-[[1](https://arxiv.org/abs/2202.06709)]
+
 
 ![bg right:45% w:100%](img/vit_loss_landscape.png)
 
@@ -148,13 +148,34 @@ Robustness to input perturbations:
 
 Is dicision based on texture or shape?
 
-- **ResNet**: relies on texture rather than shape [[2](https://arxiv.org/abs/1811.12231)]
+- **ResNet**: relies on texture rather than shape [[1](https://arxiv.org/abs/1811.12231)]
 - **ViT**: little more robust to texture perturbation
 - **Human**: much robust to texture perturbation
 
 ![center](img/cnn_texture.png)
 ![bg right:35% w:100%](img/transformer_vs_cnn.png)
 
+## Do We Really Need Attention? [arxiv](https://arxiv.org/abs/2111.11418)
+
+<!-- _class: cols-2 -->
+
+<div class=ldiv>
+
+> It turns out that it is **not** *"Attention is All You Need"*.
+
+- As long as the tokens can be mixed, MetaFormer architecture can achieve the similar performance as the Transformer.
+- Meta architecture of transformer layer can be viewed as a *special case of ResNet*  layer with following componets:
+    - Token mixers (self-attention, etc.)
+    - Position Encoding
+    - Channel MLP (1x1 convolution)
+    - Normalization (LayerNorm, etc.)
+
+</div>
+<div class=rdiv>
+
+![](img/metaformer.png)
+
+</div>
 
 ## CLIP [arxiv](https://arxiv.org/abs/2103.00020) [github](https://github.com/openai/CLIP)
 
@@ -200,8 +221,18 @@ loss = (loss_i + loss_t)/2
 <!-- _footer: "" -->
 <!-- _paginate: "" -->
 
+## LSeg [arxiv](https://arxiv.org/abs/2201.03546) [github](https://github.com/isl-org/lang-seg)
+The text embeddings provide a flexible label representation and help generalize to previously unseen categories at test time, without retraining or even requiring a single additional training sample. 
+
+![#center w:800](img/open_vocab_img_segm2.png)
+
+## LSeg [arxiv](https://arxiv.org/abs/2201.03546) [github](https://github.com/isl-org/lang-seg)
+
+Language-driven Semantic Segmentation (LSeg) embeds text labels and image pixels into a common space, and assigns the closest label to each pixel. 
+
+![center w:700](img/lseg.png)
+![bg right:30% w:100%](img/pixel_wise_segm.png)
+
 ## SAM [arxiv](https://arxiv.org/abs/2304.02643)
 
 ![#center w:900](img/sam.png)
-
-## Robot Perception

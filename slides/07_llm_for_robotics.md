@@ -24,6 +24,9 @@ Last updated: Jul / 25 /2024
 Kashu Yamazaki
 kyamazak@andrew.cmu.edu
 
+## From Transformers to Foundation Models
+
+![](https://api.wandb.ai/files/vincenttu/images/projects/37228380/5a69d608.png)
 
 ## SayCan (1/3)
 

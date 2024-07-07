@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Ensure build dir exists
-        run: mkdir -p build/dist
+        run: mkdir -p build/dist; mkdir -p build/pdf
 
       - name: Copy images directory (if exists)
         run: if [[ -d slides/img ]]; then cp -R slides/img build/dist/img; fi
@@ -42,6 +42,14 @@ jobs:
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
           args: --theme-set themes/am_template.scss themes/am_dark.scss --html -I slides/ -o build/dist/ 
+        env:
+          MARP_USER: root:root
+
+      - name: Marp Build (docs folder, if exists)
+        if: steps.docs-folder-exists.outputs.has_docs == '0'
+        uses: docker://marpteam/marp-cli:v3.0.2
+        with:
+          args: --theme-set themes/am_template.scss themes/am_dark.scss --pdf --html -I slides/ -o build/pdf/ 
         env:
           MARP_USER: root:root
 

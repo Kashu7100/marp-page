@@ -68,7 +68,20 @@ A: 90\% ~ , B: 80\% ~ 90 \%, C: 70\% ~ 80 \%, D: 60\% ~ 70 \%
 <!-- _footer: "" -->
 <!-- _paginate: "" -->
 
-## 1. Robot Learning
+## What is Robot Learning?
+
+**Robot learning** is a research field at the intersection of **machine learning** and **robotics**. It studies techniques allowing a robot to acquire novel skills or adapt to its environment through learning algorithms.
+
+
+- *Sensing*: observe the physical world through multimodal senses
+- *Perception*: acquiring knowledge from sensor data
+- *Action*: act on the environment to execute task / acquire new observation
+
+>A key challenge in Robot Learning is to close the **perception-action loop**.
+
+![bg right:35% w:90%](https://cdn-wordpress-info.futurelearn.com/info/wp-content/uploads/f338ce63-774c-4034-9278-3f3a2593c68b-768x768.png)
+
+## Applications of Robot Learning
 
 <!-- _class: cols-3 -->
 
@@ -99,20 +112,7 @@ Mobile Manipulation
 </div>
 
 
-## 1.1 What is Robot Learning?
-
-**Robot learning** is a research field at the intersection of **machine learning** and **robotics**. It studies techniques allowing a robot to acquire novel skills or adapt to its environment through learning algorithms.
-
-
-- *Sensing*: observe the physical world through multimodal senses
-- *Perception*: acquiring knowledge from sensor data
-- *Action*: act on the environment to execute task / acquire new observation
-
->A key challenge in Robot Learning is to close the **perception-action loop**.
-
-![bg right:35% w:90%](https://cdn-wordpress-info.futurelearn.com/info/wp-content/uploads/f338ce63-774c-4034-9278-3f3a2593c68b-768x768.png)
-
-## 1.2 When Should Robots Learn?
+## When Should Robots Learn?
 
 Robots should be designed to learn in situations where pre-existing knowledge or established protocols are insufficient or non-existent, requiring them to discover knowledge from data:
 
@@ -125,17 +125,17 @@ Robots should be designed to learn in situations where pre-existing knowledge or
 <!-- _class:  bq-red -->
 > Learning is **NOT** the solution to every problem in robotics.
 >
-> When the task can be modeled without knowledge from data, learning algorithm is not required (and learning algorithm tend to perform worse).
+> When the task can be modeled without knowledge from data, learning algorithm is not required (and learning algorithm tend to perform worse). We can also combine the learning system with classical techniques.
 
 
-## 1.3 How to make robots learn?
+## How to make robots learn?
 
 These days, many robot learning methods are based on **deep neural networks** with various learning algorithms (supervised learning, unsupervised learning, reinforcement learning, etc.).
 
 
 ![#center](https://www.mathworks.com/solutions/artificial-intelligence/ai-robotics/_jcr_content/mainParsys/band_copy_1227855798/mainParsys/pictogram.adapt.full.medium.svg/1712662010437.svg)
 
-## Multi-modality Sensory
+## Multi-modal Sensory
 
 <!-- _class: cols-3 -->
 
@@ -172,7 +172,8 @@ Joint Position/Velocity/Torque
 <!-- _footer: "" -->
 <!-- _paginate: "" -->
 
-## 2.1 Basics
+## Basics
+
 
 ## Backpropagation 
 
@@ -189,11 +190,11 @@ Joint Position/Velocity/Torque
 ## Scaled Dot product Attention
 
 An attention mechanism where the dot products are scaled down by $\sqrt{d_k}$. 
-* Motivated by the concern when the input is large, the softmax function may have an extremely small gradient, hard for efficient learning.
+- Motivated by the concern when the input is large, the softmax function may have an extremely small gradient, hard for efficient learning.
 
-* Calculate *similarity* from $Q$ and $K$, and scale $V$ by the similarity.
+- Calculate *similarity* from $Q$ and $K$, and scale $V$ by the similarity.
 
-* Can be viewed as **differentiable dictionary**.
+- Can be viewed as **differentiable dictionary**.
 
 $$
 \text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^\boldsymbol{\top}}{\sqrt{d_k}}\right)V
@@ -246,7 +247,7 @@ out = rearrange(out, "b h t d -> b t (h d)")
 * This allows every position in the decoder to attend over all positions in the input sequence.
 * One way to realize cross-modal fusion.
 
-![bg right:30% w:95%](img/self_cross_attn.png)
+![bg right:30% w:90%](img/self_cross_attn.png)
 
 ## Inductive Bias
 

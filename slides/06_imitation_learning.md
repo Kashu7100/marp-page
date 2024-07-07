@@ -27,3 +27,5 @@ kyamazak@andrew.cmu.edu
 ## GAIL
 
 ## Diffusion Policy
+
+![#center](img/diffusion_policy.png)
